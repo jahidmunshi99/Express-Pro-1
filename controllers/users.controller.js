@@ -1,4 +1,5 @@
-const allUsers = require("../modules/users.module");
+const { v4: uuidv4 } = require("uuid");
+let allUsers = require("../modules/users.module");
 
 const getSingleUser = (req, res) => {
     const id = req.params.id;
@@ -23,10 +24,15 @@ const getAllUsers = (req, res)=>{
 }
 
 const postUser = (req, res)=>{
-    res.status(201).json({
-        status : 200,
-        message : "This s from get users api"
-    })
+    const newUser = {
+        id : uuidv4(),
+        username: req.body.name,
+        phone: req.body.phone,
+    }
+
+    allUsers.push(newUser);
+
+    res.status(201).send(allUsers)
 }
 
 const patchUser = (req, res)=>{

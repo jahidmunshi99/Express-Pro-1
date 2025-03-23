@@ -4,7 +4,7 @@ const route = require("express").Router();
 
 route.get("/:id", getSingleUser)
 route.get("/", getAllUsers)
-route.post("/:id", postUser)
+route.post("/", postUser)
 route.patch("/:id", patchUser)
 route.delete("/:id", deleteUser)
 
