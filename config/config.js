@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const dev = {
-    app :{
+    app: {
         port : process.env.PORT || 4000
     },
     db : {
@@ -9,4 +9,4 @@ const dev = {
     }
 }
 
-module.exports =  dev;
+module.exports = dev;
